@@ -13,7 +13,7 @@ const SummaryStep: React.FC<SummaryStepProps> = (props) => {
   return (
     <>
     {displayItems.map(item => (
-      props.collectedData[item] && <div>{item}: {props.collectedData[item]}</div>
+      props.collectedData[item] && <div key={item}>{item}: {props.collectedData[item]}</div>
     ))}
       <div>
         <Link to={`/purchased=${productId}`}>Purchase</Link>

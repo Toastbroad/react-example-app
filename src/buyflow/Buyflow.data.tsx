@@ -13,7 +13,7 @@ export const PRODUCT_IDS_TO_FIRST_STEP = {
 export const DEFAULT_FORM_DATA: FormDataType = {
     name: '',
     email: '',
-    age: 1,
+    age: 0,
   }
 
 export const stepStateMap = {

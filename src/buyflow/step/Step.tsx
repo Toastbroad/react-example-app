@@ -22,7 +22,7 @@ const Step: React.FC<StepProps> = ({
 
     useEffect(() => {
         setValue(defaultValue);
-        setDisableNextButton(label !== Steps.age);
+        setDisableNextButton(true);
     }, [label]);
 
     const validateData = (input: string | number) => {
@@ -52,11 +52,12 @@ const Step: React.FC<StepProps> = ({
         <Input
           type={type}
           onChange={onValueChange}
+          data-testid={label}
           value={value}
         />
         </InputWrapper>
         <Error>{error}</Error>
-      <Button onClick={handleNextClick} disabled={disableNextButton}>Next</Button>
+      <Button onClick={handleNextClick} disabled={disableNextButton} data-testid="next">Next</Button>
     </Container>
   )
 }
