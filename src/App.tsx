@@ -1,27 +1,29 @@
-import React from 'react'
-import logo from './logo.svg'
-import './App.css'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import React from 'react';
+import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Buyflow from './buyflow/Buyflow';
+import { AppWrapper, AppHeader, AppLogo, Title, LinkWrapper, StartButton } from "./App.styled";
 
 const App = () => {
   return (
     <Router>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
+      <AppWrapper>
+        <AppHeader>
+          <AppLogo src={logo} alt="logo" />
+        </AppHeader>
         <Switch>
           <Route path="/buy/:productId">
             <Buyflow />
           </Route>
           <Route path="/">
-            <p>Welcome to Getsafe's Insurance</p>
-            <Link to="/buy/developer_insurance">Get started with developer insurance!</Link>
-            <Link to="/buy/designer_insurance">Get started with designer insurance!</Link>
+            <Title>Welcome to Getsafe's Insurance</Title>
+            <LinkWrapper>
+              <StartButton to="/buy/developer_insurance">Get started with developer insurance!</StartButton>
+              <StartButton to="/buy/designer_insurance">Get started with designer insurance!</StartButton>
+            </LinkWrapper>
           </Route>
         </Switch>
-      </div>
+      </AppWrapper>
     </Router>
   )
 }

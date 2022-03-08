@@ -9,7 +9,7 @@ export const Container = styled.div`
 
 export const InputWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 `;
 
@@ -26,12 +26,13 @@ export const Input = styled.input`
 `;
 
 export const Label = styled.span`
-line-height: 2;
+  line-height: 2;
   text-transform: capitalize;
+  text-align: left;
 `;
 
 export const Error = styled.div`
-    padding: 0.5rem 0;
+  padding: 0.5rem 0;
   color: red;
 `;
 
@@ -46,8 +47,16 @@ background-color: #1aa229;
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+
+  &:hover {
+        background-color: #168822;  
+    }
+
   ${props => props.disabled && css`
     background-color: #92a294;
+    &:hover {
+        background-color: #92a294;  
+    }
   `}
 
 `;
