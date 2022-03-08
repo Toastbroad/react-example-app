@@ -1,20 +1,18 @@
 
-export interface BuyflowProps {
+export interface BuyFlowRouteParams {
     productId: ProductIds
   }
 
   export enum ProductIds {
-    devIns = 'dev_ins',
-  }
-  
-  export const PRODUCT_IDS_TO_NAMES = {
-    [ProductIds.devIns]: 'Developer Insurance',
+    devIns = 'developer_insurance',
+    designerIns = 'designer_insurance',
   }
 
 export interface FormDataType {
       name: string;
       email: string;
       age: number;
+      [key: string]: string | number;
   }
 
   export enum Steps {

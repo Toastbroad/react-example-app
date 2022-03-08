@@ -18,14 +18,17 @@ const Step: React.FC<StepProps> = ({
 }) => {
     const [value, setValue] = useState(defaultValue);
     const [error, setError] = useState("");
+    const [disableNextButton, setDisableNextButton] = useState(true);
 
     useEffect(() => {
         setValue(defaultValue);
+        setDisableNextButton(label !== Steps.age);
     }, [label]);
 
     const validateData = (input: string | number) => {
       const isValidData = validateInput(label, input);
       const errorMessage = !isValidData ? `Please enter a valid ${label}` : "";
+      setDisableNextButton(!isValidData);
       setError(errorMessage);
     }
 
@@ -41,9 +44,6 @@ const Step: React.FC<StepProps> = ({
         handleChange(label, value)
       }
     }
-
-
-    const disableNextButton = error !== "";
 
   return (
     <Container>
